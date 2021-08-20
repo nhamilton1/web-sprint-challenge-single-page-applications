@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function OrderForm(props) {
-    const { values, submit, change } = props
+    const { values, submit, change, errors, disabled } = props
 
     const onSubmit = evt => {
         evt.preventDefault()
@@ -16,6 +16,13 @@ export default function OrderForm(props) {
 
     return(
         <form id="pizza-form" onSubmit={onSubmit}>
+            <div>
+                <h2>Make your own Pizza</h2>
+                <div className='errors'>
+                    <div>{errors.name}</div>
+                    <div>{errors.size}</div>
+                </div>
+            </div>
             <label>
                 Name:
                 <input 
@@ -30,7 +37,7 @@ export default function OrderForm(props) {
                 Select your pizza size:
                 <select 
                     onChange={onChange}
-                    value={values.toppings}
+                    value={values.size}
                     name='size'
                     id='size-dropdown'
                 >
@@ -96,7 +103,7 @@ export default function OrderForm(props) {
                     id='special-text'
                 />
             </label>
-            <button id='order-button'>submit</button>
+            <button disabled={disabled} id='order-button'>submit</button>
         </form>
     )
 }

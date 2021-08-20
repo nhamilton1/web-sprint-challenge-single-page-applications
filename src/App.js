@@ -3,6 +3,8 @@ import { Link, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import OrderForm from './components/OrderForm'
 import Home from './components/Home'
+import * as yup from 'yup'
+import schema from './validation/formSchema'
 
 const initialFormValues = {
   ///// TEXT INPUTS /////
@@ -18,24 +20,20 @@ const initialFormValues = {
   everything: false,
 }
 
-// const initialFormErrors = {
-//   ///// TEXT INPUTS /////
-//   name: '',
-//   instructions: '',
-//   ///// DROPDOWN /////
-//   size: '',
-
-// }
+const initialFormErrors = {
+  name: '',
+  size: '',
+}
 
 const initialUsers = []
-// const initialDisabled = true
+const initialDisabled = true
 
 const App = () => {
 
   const [ user, setUser ] = useState(initialUsers)
   const [ formValues, setFormValues ] = useState(initialFormValues)
-  // const [ formErrors, setFormErrors ] = useState(initialFormErrors)
-  // const [ disabled, setDisabled ] = useState(initialDisabled)
+  const [ formErrors, setFormErrors ] = useState(initialFormErrors)
+  const [ disabled, setDisabled ] = useState(initialDisabled)
 
 
   const postNewUser = newFriend => {
@@ -47,12 +45,16 @@ const App = () => {
     setFormValues(initialFormValues);
   }
 
+  const validate = (name, value) => {
+    yup.reach(schema, name)
+      .validate(value)
+      .then(() => setFormErrors({ ...formErrors, [name]: '' }))
+      .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0]}))
+  }
 
   const inputChange = (name, value) => {
-    setFormValues({
-      ...formValues,
-      [name]: value // NOT AN ARRAY
-    })
+    validate(name, value)
+    setFormValues({...formValues,[name]: value})
   }
 
   const formSubmit = () => {
@@ -65,7 +67,9 @@ const App = () => {
     postNewUser(newUser)
   }
 
-
+  useEffect(() => {
+    schema.isValid(formValues).then(valid => setDisabled(!valid))
+  }, [formValues])
 
   return (
     <div className='App'>
@@ -82,7 +86,8 @@ const App = () => {
             values={formValues}
             change={inputChange}
             submit={formSubmit}
-            // disabled={disabled}
+            errors={formErrors}
+            disabled={disabled}
           />
         </Route>
         <Route path="/">
