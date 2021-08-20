@@ -5,11 +5,6 @@ import { NavLink } from 'react-router-dom'
 
 
 export default function Home() {
-
-  
-    const routeToShop = () => {
-        
-    }
   
     return (
       <div className='home-wrapper'>
@@ -20,7 +15,6 @@ export default function Home() {
         />
         <NavLink to="/pizza" style={{ textDecoration: 'none', color: 'black' }}>
           <button
-            onClick={routeToShop}
             className='md-button shop-button'
           >
             Order now!
