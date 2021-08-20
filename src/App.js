@@ -62,7 +62,11 @@ const App = () => {
       name: formValues.name.trim(),
       instructions: formValues.instructions.trim(),
       size: formValues.size.trim(),
-      toppings: ['cheese', 'sausage', 'garlic', 'pepperoni'].filter(toppings => !!formValues[toppings]),
+      garlic: formValues.garlic,
+      cheese: formValues.cheese,
+      sausage: formValues.sausage,
+      pepperoni: formValues.pepperoni
+      // toppings: ['cheese', 'sausage', 'garlic', 'pepperoni'].filter(toppings => !!formValues[toppings]),
     }
     postNewUser(newUser)
   }
