@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -14,15 +15,17 @@ export default function Home() {
       <div className='home-wrapper'>
         <img
           className='home-image'
-          src={""}
+          src="https://i.imgur.com/4WfYY38.jpeg"
           alt=''
         />
-        <button
-          onClick={routeToShop}
-          className='md-button shop-button'
-        >
-          Order now!
-        </button>
+        <NavLink to="/pizza" style={{ textDecoration: 'none', color: 'black' }}>
+          <button
+            onClick={routeToShop}
+            className='md-button shop-button'
+          >
+            Order now!
+          </button>
+        </NavLink>
       </div>
     )
   }
