@@ -36,8 +36,8 @@ const App = () => {
   const [ disabled, setDisabled ] = useState(initialDisabled)
 
 
-  const postNewUser = newFriend => {
-    axios.post('https://reqres.in/api/orders', newFriend)
+  const postNewUser = newUser => {
+    axios.post('https://reqres.in/api/orders', newUser)
       .then(res => {
         setUser([res.data, ...user]);
       }).catch(err => console.error(err));
@@ -77,7 +77,7 @@ const App = () => {
         <h1 className='store-header'>Lambda Eats</h1>
         <div className='nav-links'>
           <Link to="/">Home</Link>
-          <Link to="/pizza">Order Pizza</Link>
+          <Link id="order-pizza" to="/pizza">Order Pizza</Link>
         </div>
       </nav>
       <Switch>
