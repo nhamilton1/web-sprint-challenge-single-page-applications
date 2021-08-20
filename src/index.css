@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 2px solid grey;
+  margin-bottom: 16px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.nav-links a:last-of-type {
+  margin-right: 0;
+  
+}
+
+.nav-links a.active {
+  border-bottom: 1px solid #1c5d76;
+}
