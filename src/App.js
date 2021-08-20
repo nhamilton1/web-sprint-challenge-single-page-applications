@@ -65,7 +65,7 @@ const App = () => {
       garlic: formValues.garlic,
       cheese: formValues.cheese,
       sausage: formValues.sausage,
-      pepperoni: formValues.pepperoni
+      pepperoni: formValues.pepperoni,
       // toppings: ['cheese', 'sausage', 'garlic', 'pepperoni'].filter(toppings => !!formValues[toppings]),
     }
     postNewUser(newUser)

@@ -4,16 +4,7 @@ export default function UserOrder (props) {
     const { user } = props
     return (
         <div className='friend container'>
-            <h2>{user.name}</h2>
-            <p>Pizza Size: {user.size}</p>
-            {
-            <div>
-            toppings:
-                <ul>
-                    {user.toppings.map((like, idx) => <li key={idx}>{like}</li>)}
-                </ul>
-            </div>
-            }
+            <h1>Congrats {user.name}, your {user.size} pizza has been ordered!</h1>
             <p>{user.instructions}</p>
         </div>
     )
