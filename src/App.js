@@ -5,6 +5,7 @@ import OrderForm from './components/OrderForm'
 import Home from './components/Home'
 import * as yup from 'yup'
 import schema from './validation/formSchema'
+import Order from './components/UserOrder'
 
 const initialFormValues = {
   ///// TEXT INPUTS /////
@@ -15,9 +16,7 @@ const initialFormValues = {
   ///// CHECKBOXES /////
   cheese: false,
   sausage: false,
-  peppers: false,
   pepperoni: false,
-  everything: false,
 }
 
 const initialFormErrors = {
@@ -89,6 +88,14 @@ const App = () => {
             errors={formErrors}
             disabled={disabled}
           />
+          {
+          user.map(user => {
+            return ( 
+            <Order key={user.id} user={user}
+            />
+            )
+          })
+          }
         </Route>
         <Route path="/">
           <Home />

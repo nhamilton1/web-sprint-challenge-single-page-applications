@@ -33,8 +33,8 @@ export default function OrderForm(props) {
                     id='name-input'
                 />
             </label>
+            <h4>Select your pizza size:</h4>
             <label>
-                Select your pizza size:
                 <select 
                     onChange={onChange}
                     value={values.size}
@@ -48,6 +48,7 @@ export default function OrderForm(props) {
                     <option value='XL'>Extra Large</option>
                 </select>
             </label>
+            <h4>Pick your toppings</h4>
             <label>
                 Cheese
                 <input 
@@ -67,15 +68,6 @@ export default function OrderForm(props) {
                 />
             </label>
             <label>
-                peppers
-                <input 
-                    type="checkbox"
-                    name="peppers"
-                    checked={values.peppers}
-                    onChange={onChange}
-                />
-            </label>
-            <label>
                 pepperoni
                 <input 
                     type="checkbox"
@@ -84,17 +76,8 @@ export default function OrderForm(props) {
                     onChange={onChange}
                 />
             </label>
+            <h6>Any Special instructions?</h6>
             <label>
-                Everything
-                <input 
-                    type="checkbox"
-                    name="everything"
-                    checked={values.everything}
-                    onChange={onChange}
-                />
-            </label>
-            <label>
-                Special Intructions:
                 <input 
                     value={values.instructions}
                     onChange={onChange}
