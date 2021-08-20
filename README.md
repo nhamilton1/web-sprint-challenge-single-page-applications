@@ -33,19 +33,24 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
+    This hook attempts to match the current URL the same way that route would. It's mostly useful for getting access to the match data without actually rendering a <Route>
 1. How would you explain form validation to someone who has never programmed before?
+    Whenever you fill out a form and it says, "your password is not strong enough" or "you must give a valid email address" this is form validation.
+    They are comparing your input to a peice of code they wrote that has certain requirements to be met. 
 1. In 1-2 sentences, define end to end testing.
+    End to end looks at the entire user experience. End to end testing basically asks if a user can accomplish an action. End to end also focuses on UI, it mimics how a users
+    might interact with an app, simulationg real events, scrolling, typing, submitting, clicking, etc. 
 
 ## Instructions
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
+- [x] Create a forked copy of this project
 - [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: `git checkout -b <firstName-lastName>`
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: `git checkout -b <firstName-lastName>`
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: `git push origin <firstName-lastName>`
+- [x] Push commits: `git push origin <firstName-lastName>`
 
 ### Task 2: Project Requirements
 
@@ -53,12 +58,12 @@ Your finished project must include all of the following requirements:
 
 - [ ] A homepage that has a "/" route and links to your form (button, nav bar, or any other type of link is acceptable but must have an id of "order-pizza")
 - [ ] A order form that has a "/pizza" route and shows the form
-- [ ] A form with an id of "pizza-form"
-- [ ] A name text input field with an id of "name-input"
+- [x] A form with an id of "pizza-form"
+- [x] A name text input field with an id of "name-input"
 - [ ] Validation for name and the error message is "name must be at least 2 characters" (Use this exact error message to make sure tests pass)
-- [ ] A dropdown for pizza size with an id of "size-dropdown"
-- [ ] A checklist for toppings - at least 4 (hint: name each separately!)
-- [ ] Text input for special instructions with an id of "special-text"
+- [x] A dropdown for pizza size with an id of "size-dropdown"
+- [x] A checklist for toppings - at least 4 (hint: name each separately!)
+- [x] Text input for special instructions with an id of "special-text"
 - [ ] An Add to Order button that has an id of "order-button" and that submits form and returns a database record of name, size, toppings and special instructions
 
 Data should look something like

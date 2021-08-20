@@ -9,7 +9,6 @@ export default function OrderForm(props) {
       }
 
       const onChange = evt => {
-        /* 🔥 FIX THIS SO IT ALSO WORKS WITH CHECKBOXES */
         const { name, value, checked, type } = evt.target
         const valueToUse = type === 'checkbox' ? checked : value;
         change(name, valueToUse);
@@ -78,6 +77,26 @@ export default function OrderForm(props) {
                     onChange={onChange}
                 />
             </label>
+            <label>
+                Everything
+                <input 
+                    type="checkbox"
+                    name="everything"
+                    checked={values.everything}
+                    onChange={onChange}
+                />
+            </label>
+            <label>
+                Special Intructions:
+                <input 
+                    value={values.instructions}
+                    onChange={onChange}
+                    name='instructions'
+                    type='text'  
+                    id='special-text'
+                />
+            </label>
+            <button id='order-button'>submit</button>
         </form>
     )
 }

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import OrderForm from './components/OrderForm'
+import Home from './components/Home'
 
 const initialFormValues = {
   ///// TEXT INPUTS /////
@@ -14,6 +15,7 @@ const initialFormValues = {
   sausage: false,
   peppers: false,
   pepperoni: false,
+  everything: false,
 }
 
 // const initialFormErrors = {
@@ -74,11 +76,19 @@ const App = () => {
           <Link to="/pizza">Order Pizza</Link>
         </div>
       </nav>
-      <OrderForm 
-        values={formValues}
-        change={inputChange}
-        submit={formSubmit}
-      />
+      <Switch>
+        <Route path="/pizza">
+          <OrderForm 
+            values={formValues}
+            change={inputChange}
+            submit={formSubmit}
+            // disabled={disabled}
+          />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 };
