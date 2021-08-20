@@ -59,6 +59,15 @@ export default function OrderForm(props) {
                 />
             </label>
             <label>
+                Garlic
+                <input 
+                    type="checkbox"
+                    name="garlic"
+                    checked={values.garlic}
+                    onChange={onChange}
+                />
+            </label>
+            <label>
                 sausage
                 <input 
                     type="checkbox"

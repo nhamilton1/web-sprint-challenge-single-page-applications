@@ -14,9 +14,10 @@ const initialFormValues = {
   ///// DROPDOWN /////
   size: '',
   ///// CHECKBOXES /////
+  garlic: false,
   cheese: false,
   sausage: false,
-  pepperoni: false,
+  pepperoni: false
 }
 
 const initialFormErrors = {
@@ -61,7 +62,7 @@ const App = () => {
       name: formValues.name.trim(),
       instructions: formValues.instructions.trim(),
       size: formValues.size.trim(),
-      toppings: ['cheese', 'sausage', 'pepers', 'pepperoni'].filter(toppings => !!formValues[toppings]),
+      toppings: ['cheese', 'sausage', 'garlic', 'pepperoni'].filter(toppings => !!formValues[toppings]),
     }
     postNewUser(newUser)
   }

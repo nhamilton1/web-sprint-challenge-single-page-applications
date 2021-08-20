@@ -15,6 +15,7 @@ const formSchema = yup.object().shape({
     cheese: yup.boolean(),
     sausage: yup.boolean(),
     pepperoni: yup.boolean(),
+    garlic: yup.boolean()
 })
 
 export default formSchema
